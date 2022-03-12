@@ -9,7 +9,22 @@ const initialState = [{
 }]; 
 
 const App = ()=> {
-  const[tareas] = useReducer(reducer, initialState); 
+  const[tareas, dispatch] = useReducer(reducer, initialState); 
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+
+    const newTarea = {
+      id: new Date().getTime(),
+      desc: 'Learn Node', 
+      done: false
+    }
+    const action = {
+      type: 'add',
+      payload: newTarea
+    }
+    dispatch(action)
+  }
   return (
     <div>
       <h1>Lista de pendientes </h1>
@@ -32,7 +47,7 @@ const App = ()=> {
         <div className="col-5">
             <h4>Agregar Tarea</h4>
             <hr />
-             <form>
+             <form onSubmit={handleSubmit}>
                 <input type="text" name="description" placeholder="Ingrese aqui su tarea..." className="form-control" autoComplete="off" />
                 <button type="submit" className="btn btn-outline-primary margin-top">Agregar</button>
             </form>
