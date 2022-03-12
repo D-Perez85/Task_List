@@ -1,9 +1,16 @@
-import React from "react"; 
+import React, { useReducer } from "react"; 
 import { reducer } from "./reducer";
 import "./styles.css";
 
+const initialState = [{
+  id: new Date().getTime(),
+  desc: 'Learn React',
+  done: false
+}]; 
 
 const App = ()=> {
+  const[tareas] = useReducer(reducer, initialState); 
+  console.log(tareas);
   return (
     <div>
       <h1>Lista de Tareas </h1>
