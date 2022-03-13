@@ -39,6 +39,14 @@ const App = () => {
     dispatch(action);
   };
 
+  const handleToggle = (id) =>{
+    const action ={
+      type: "toggle",
+      payload: id
+    }; 
+    dispatch(action)
+  }
+
   return (
     <div>
       <h1>Lista de pendientes ({tareas.length}) </h1>
@@ -49,12 +57,16 @@ const App = () => {
             {tareas.map((value, index) => {
               return (
                 <li className="list-group-item">
-                  <p className="text-center">
+                  <p
+                    className={`${value.done && "complete"}`}
+                    onClick={() => handleToggle(value.id)}
+                  >
                     {index + 1} - {value.desc}
                   </p>
                   <button
                     className="btn btn-danger"
-                    onClick={() => handleDelete(value.id)}>
+                    onClick={() => handleDelete(value.id)}
+                  >
                     Borrar
                   </button>
                 </li>
