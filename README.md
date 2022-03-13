@@ -31,15 +31,16 @@ npm start
 El deploy fue realizado con Gh-Pages, podras verlo desde el siguiente Link: 
 
 ```
-........
+https://d-perez85.github.io/use-reducer-app/
 ```
 
-## Learn More
+
+## Learn More About React
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-
-⌨️ con ❤️ por [Damian Perez](https://github.com/D-Perez85) 😊
+##
+Made with ❤️ by [Damian Perez](https://github.com/D-Perez85) 😊
 
