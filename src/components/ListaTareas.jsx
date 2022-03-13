@@ -1,10 +1,10 @@
-import React from "react"; 
+import React from "react";
 import PropTypes from "prop-types";
-import {Tarea} from "./Tarea";
+import { Tarea } from "./Tarea";
 
-export const ListaTareas = ({ tareas, handleDelete, handleToggle }) =>{
-    return (
-        <ul className="list-group list-group-flush">
+export const ListaTareas = ({ tareas, handleDelete, handleToggle }) => {
+  return (
+    <ul className="list-group list-group-flush">
       {tareas.map((value, index) => {
         return (
           <Tarea
@@ -17,12 +17,10 @@ export const ListaTareas = ({ tareas, handleDelete, handleToggle }) =>{
         );
       })}
     </ul>
-    )
-}
+  );
+};
 
-ListaTareas.propTypes ={
-    handleDelete: PropTypes.func.isRequired,
-    handleToggle: PropTypes.func.isRequired
-}
-
-
+ListaTareas.propTypes = {
+  handleDelete: PropTypes.func.isRequired,
+  handleToggle: PropTypes.func.isRequired,
+};

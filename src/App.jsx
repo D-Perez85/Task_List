@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from "react";
 import { AddTarea } from "./components/AddTarea";
-import {ListaTareas} from "./components/ListaTareas";
+import { ListaTareas } from "./components/ListaTareas";
 import { reducer } from "./reducer";
 import "./styles.css";
 
@@ -14,18 +14,18 @@ const App = () => {
     localStorage.setItem("tareas", JSON.stringify(tareas));
   }, [tareas]);
 
-  const handleAddTarea = (newTarea) =>{
+  const handleAddTarea = (newTarea) => {
     dispatch({
-     type: "add",
-     payload: newTarea,
-   });
-  }; 
-  const handleToggle = (id) =>{ 
+      type: "add",
+      payload: newTarea,
+    });
+  };
+  const handleToggle = (id) => {
     dispatch({
-      type: "toggle", 
-      payload: id
-    })
-  }
+      type: "toggle",
+      payload: id,
+    });
+  };
   const handleDelete = (id) => {
     const action = {
       type: "delete",
@@ -39,12 +39,14 @@ const App = () => {
       <hr />
       <div className="row">
         <div className="col-7">
-           <ListaTareas tareas={tareas} 
-           handleDelete={handleDelete} handleToggle={handleToggle}
-           />
+          <ListaTareas
+            tareas={tareas}
+            handleDelete={handleDelete}
+            handleToggle={handleToggle}
+          />
         </div>
         <div className="col-5">
-           <AddTarea handleAddTarea={handleAddTarea}/>
+          <AddTarea handleAddTarea={handleAddTarea} />
         </div>
       </div>
     </div>
