@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/%7Buse-reducer-app%7D/static/css/main.4bce6f71.css",
-    "main.js": "/%7Buse-reducer-app%7D/static/js/main.c066d9db.js",
-    "index.html": "/%7Buse-reducer-app%7D/index.html",
-    "main.4bce6f71.css.map": "/%7Buse-reducer-app%7D/static/css/main.4bce6f71.css.map",
-    "main.c066d9db.js.map": "/%7Buse-reducer-app%7D/static/js/main.c066d9db.js.map"
+    "main.css": "/use-reducer-app/static/css/main.4bce6f71.css",
+    "main.js": "/use-reducer-app/static/js/main.c066d9db.js",
+    "index.html": "/use-reducer-app/index.html",
+    "main.4bce6f71.css.map": "/use-reducer-app/static/css/main.4bce6f71.css.map",
+    "main.c066d9db.js.map": "/use-reducer-app/static/js/main.c066d9db.js.map"
   },
   "entrypoints": [
     "static/css/main.4bce6f71.css",
