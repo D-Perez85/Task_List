@@ -1,6 +1,7 @@
 # Task_List APP
 
-App para agendar tareas cotidianas, permite el tachado de las que fueron realizadas, como asi también el borrado para eliminarlas de la lista.
+SimpleApp para agendar tareas cotidianas, permite el tachado de las que fueron realizadas, como asi también el borrado para eliminarlas de la lista.
+Realizado en formato desktop, no responsive.
 
 ## Comenzando 🚀
 
