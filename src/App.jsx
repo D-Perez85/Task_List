@@ -1,21 +1,21 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { useForm } from "./hooks/useForm";
 import { reducer } from "./reducer";
 import "./styles.css";
 
-const initialState = [
-  {
-    id: new Date().getTime(),
-    desc: "Learn React",
-    done: false,
-  },
-];
-
 const App = () => {
-  const [tareas, dispatch] = useReducer(reducer, initialState);
+  const init = () =>{
+    return JSON.parse(localStorage.getItem('tareas')) || []; 
+  }
+  const [tareas, dispatch] = useReducer(reducer, [], init);
   const [{ description }, handleChange, reset] = useForm({
     description: "",
   });
+
+  useEffect(()=>{
+    localStorage.setItem('tareas', JSON.stringify(tareas))
+  },[tareas]); 
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -31,6 +31,10 @@ const App = () => {
     dispatch(action);
     reset();
   };
+
+
+
+
   return (
     <div>
       <h1>Lista de pendientes </h1>
