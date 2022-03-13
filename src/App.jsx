@@ -4,17 +4,17 @@ import { reducer } from "./reducer";
 import "./styles.css";
 
 const App = () => {
-  const init = () =>{
-    return JSON.parse(localStorage.getItem('tareas')) || []; 
-  }
+  const init = () => {
+    return JSON.parse(localStorage.getItem("tareas")) || [];
+  };
   const [tareas, dispatch] = useReducer(reducer, [], init);
   const [{ description }, handleChange, reset] = useForm({
     description: "",
   });
 
-  useEffect(()=>{
-    localStorage.setItem('tareas', JSON.stringify(tareas))
-  },[tareas]); 
+  useEffect(() => {
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+  }, [tareas]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,13 +31,17 @@ const App = () => {
     dispatch(action);
     reset();
   };
-
-
-
+  const handleDelete = (id) => {
+    const action = {
+      type: "delete",
+      payload: id,
+    };
+    dispatch(action);
+  };
 
   return (
     <div>
-      <h1>Lista de pendientes </h1>
+      <h1>Lista de pendientes ({tareas.length}) </h1>
       <hr />
       <div className="row">
         <div className="col-7">
@@ -48,7 +52,11 @@ const App = () => {
                   <p className="text-center">
                     {index + 1} - {value.desc}
                   </p>
-                  <button className="btn btn-danger">Borrar</button>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(value.id)}>
+                    Borrar
+                  </button>
                 </li>
               );
             })}
