@@ -20,6 +20,12 @@ const App = () => {
      payload: newTarea,
    });
   }; 
+  const handleToggle = (id) =>{ 
+    dispatch({
+      type: "toggle", 
+      payload: id
+    })
+  }
   const handleDelete = (id) => {
     const action = {
       type: "delete",
@@ -27,20 +33,15 @@ const App = () => {
     };
     dispatch(action);
   };
-  const handleToggle = (id) =>{
-    const action ={
-      type: "toggle",
-      payload: id
-    }; 
-    dispatch(action)
-  }
   return (
     <div>
       <h1>Lista de pendientes ({tareas.length}) </h1>
       <hr />
       <div className="row">
         <div className="col-7">
-           <ListaTareas tareas={tareas} handleDelete={handleDelete} handleToggle={handleToggle}/>
+           <ListaTareas tareas={tareas} 
+           handleDelete={handleDelete} handleToggle={handleToggle}
+           />
         </div>
         <div className="col-5">
            <AddTarea handleAddTarea={handleAddTarea}/>
@@ -49,5 +50,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;

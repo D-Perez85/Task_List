@@ -1,5 +1,6 @@
 import React from "react"; 
-import Tarea from "./Tarea";
+import PropTypes from "prop-types";
+import {Tarea} from "./Tarea";
 
 export const ListaTareas = ({ tareas, handleDelete, handleToggle }) =>{
     return (
@@ -18,4 +19,10 @@ export const ListaTareas = ({ tareas, handleDelete, handleToggle }) =>{
     </ul>
     )
 }
+
+ListaTareas.propTypes ={
+    handleDelete: PropTypes.func.isRequired,
+    handleToggle: PropTypes.func.isRequired
+}
+
 

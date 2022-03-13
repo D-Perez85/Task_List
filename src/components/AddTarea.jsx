@@ -1,5 +1,6 @@
 import React from "react"; 
 import { useForm } from "../hooks/useForm";
+import PropTypes from "prop-types";
 
 export const AddTarea = ({handleAddTarea}) =>{
    const[{description}, handleChange, reset] =  useForm({
@@ -31,9 +32,7 @@ const handleSubmit = (e) => {
           value={description}
           name="description"
           className="form-control"
-          placeholder="Ingrese aqui su tarea..."
-
-        />
+          placeholder="Ingrese aqui su tarea..."/>
         <button type="submit" className="btn btn-outline-primary margin-top">
           Agregar
         </button>
@@ -41,3 +40,7 @@ const handleSubmit = (e) => {
     </>
   );
 }; 
+
+AddTarea.propTypes = {
+  handleAddTarea: PropTypes.func.isRequired
+}
